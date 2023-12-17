@@ -1,0 +1,8 @@
+NOTES.md
+constant.js
+docs/_build
+*.csv
+output/
+conf.py
+# docs/_src
+# docs/__pycache__

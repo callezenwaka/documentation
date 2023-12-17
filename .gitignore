@@ -1,0 +1,4 @@
+syft-doc/NOTES.md
+syft-doc/docs/_build
+syft-doc/*.csv
+syft-theme/docs/_build
