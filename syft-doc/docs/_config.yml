@@ -1,0 +1,183 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Syft Documentation
+logo: _images/logo.svg
+author: The Openmined Community
+copyright: "2022"  # Copyright year to be placed in the footer
+email: info@openmined.org
+description: This is a differential privacy toolkit. # Short description about the book
+
+only_build_toc_files: true
+
+execute:
+  # See https://jupyterbook.org/content/execute.html
+  execute_notebooks: force
+  #   "auto" should only execute those notebooks that don't have output in all cells.
+  #   "force" : force execution of all notebooks
+  #   "cache": Cache output of notebooks on each build.
+  timeout: 600
+  # Cells that are expected to fail (for pedagogical reasons) should set the cell tag `raises-exceptions`
+  allow_errors: False
+  # execute_notebooks: "_src/*.py"
+  exclude_patterns:
+  - README.md
+  - CONTRIBUTING.md
+  - NOTES.md
+  # - conf.py
+  # - output/
+
+# execution:
+#   timeout: 600
+#   execute_notebooks: "_src/*.py"
+
+#######################################################################################
+# Parse and render settings
+parse:
+  myst_enable_extensions: # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_admonition
+    - html_image
+    - replacements
+    - smartquotes
+    - substitution
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+
+# WARNING:
+# All of the remaining settings have been moved to the sphinx: config: ...
+# section below.  This is because anything you set in the sphinx: config: ...
+# section will overwrite (without recursive updating) any Sphinx config setting
+# created by Jupyter Book.  For example, the `html_theme_options` Sphinx config
+# setting gets replaced entirely by what is found in the sphinx: config: ...
+# section below.  Thus, to use the new theme, all of these setting need to be
+# set in the sphinx: config: ... section below.
+#
+# see: https://github.com/callezenwaka/sphinx-syft-theme/pull/196
+#      https://github.com/callezenwaka/sphinx-syft-theme/issues/1588
+
+# Information about where the book exists on the web
+# repository:
+#   url: https://github.com/callezenwaka/sphinx-syft-theme # Online location of your book
+#   #path_to_book: docs  # Optional path to your book, relative to the repository root
+#   branch: main # Which branch of the repository should be used when creating links (optional)
+
+# Configure your Binder links, such as the URL of the BinderHub.
+# launch_buttons:
+#   binderhub_url: https://mybinder.org
+#   notebook_interface: jupyterlab
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+#   favicon: images/icons/favicon.ico
+#   google_analytics_id: 'G-G57FLM9M46'
+  home_page_in_navbar: false
+#   use_issues_button: true
+#   use_repository_button: true
+#   use_edit_page_button: true
+#   extra_footer: |
+#     <img src="/_static/footer-logo-nsf.png" style="float:left;width:60px;height:60px;margin-right:1rem;">
+#     This material is based upon work supported by the National
+#     Science Foundation under Grant Nos. 2026863 and 2026899. Any
+#     opinions, findings, and conclusions or recommendations expressed
+#     in this material are those of the author(s) and do not necessarily
+#     reflect the views of the National Science Foundation.<br><br>
+#     Theme by <a href="https://openmined.org">Project Pythia</a>.<br>
+#     All code in Pythia Foundations is licensed under Apache 2.0. All other non-code content is licensed
+#     under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 (CC BY 4.0)</a>.
+
+sphinx:
+  # extra_extensions:
+  #   - sphinx_tabs.tabs
+  # local_extensions:
+  #   my_module: docs/helper_functions/helper_functions.py
+  config:
+    # Additional Sphinx configuration
+    # inline_code_highlight: "true"
+    # jupyter_execute_notebooks: "cache"
+    nb_execution_raise_on_error: true # raise exception in build if there are notebook errors (this flag is ignored if building on binder)
+    linkcheck_request_headers:
+      'https://docs.github.com/':
+        User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:24.0) Gecko/20100101 Firefox/24.0
+    html_favicon: _images/favicon.ico
+    html_logo: _images/logo.svg
+    html_last_updated_fmt: '%-d %B %Y'
+    html_theme: sphinx_syft_theme
+    html_permalinks_icon: '<i class="fas fa-link"></i>'
+    html_static_path:
+      - _static
+      - _images
+    html_css_files:
+      - css/syft.css
+    html_js_files:
+      - js/initialize.js
+    html_theme_options:
+      # google_analytics_id: 'G-G57FLM9M46'
+      # home_page_in_toc: true
+      home_page_in_toc: False
+      repository_url: https://github.com/callezenwaka/syftbook # Online location of your book
+      repository_branch: main # Which branch of the repository should be used when creating links (optional)
+      # use_issues_button: true
+      # use_repository_button: true
+      # use_edit_page_button: true
+      # github_url: https://github.com/callezenwaka/sphinx-syft-theme
+      # twitter_url: https://twitter.com/project_pythia
+      # icon_links:
+      #   - name: YouTube
+      #     url: https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw
+      #     icon: fab fa-youtube-square
+      #     type: fontawesome
+      # launch_buttons:
+      #   binderhub_url: https://binder.openmined.org
+      #   notebook_interface: jupyterlab
+      # extra_navbar: |
+      #   We want your feedback! See our <a href="https://callezenwaka/sphinx-syft-theme/how-to-contribute.html">Contributor's Guide</a>.
+      # logo_link: https://syftbook.readthedocs.io/
+      # logo: _images/logo-dark.svg
+      logo:
+        image_light: _images/logo.svg
+        text: OpenMined # Uncomment to try text with logo
+        # image_dark: _images/logo-light.svg
+      navbar_links:
+        - name: Home
+          url: /index.html
+        - name: Getting Started
+          url: /installations/overview.html
+        - name: Deployment
+          url: /deployments/overview.html
+        - name: Tutorials
+          url: /tutorials/overview.html
+        - name: Padawan
+          url: /padawan/overview.html
+        - name: Contribute
+          url: /syft/overview.html
+        # - name: Blog
+        #   url: https://blog.openmined.org
+    html_sidebars:
+      index: []
+    #   '**':
+    #   sbt-sidebar-nav.html
+      # footer_logos:
+      #   NCAR: images/logos/NCAR-contemp-logo-blue.svg
+      #   Unidata: images/logos/Unidata_logo_horizontal_1200x300.svg
+      #   UAlbany: images/logos/UAlbany-A2-logo-purple-gold.svg
+
+  extra_extensions:
+    # - ablog
+    # - sphinx_click.ext
+    # - sphinx_tabs.tabs
+    - sphinx_inline_tabs
+    # - sphinx.ext.autodoc
+    # - sphinx.ext.intersphinx
+    # - sphinxcontrib.bibtex

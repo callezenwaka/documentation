@@ -1,0 +1,51 @@
+.navbar-brand {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  gap: 0.5rem;
+  height: var(--pst-header-height);
+  margin: 0;
+  max-height: var(--pst-header-height);
+  padding: 0.5rem 0;
+  position: relative;
+  width: auto;
+}
+
+.navbar-brand .logo__image {
+  height: 100%;
+}
+
+.bd-sidebar-secondary .onthispage {
+  height: 3rem;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: var(--pst-color-muted);
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.hero-background {
+  background-image: url(/static/media/bg_ball_blue.99369d5….png), url(/static/media/bg_ball_orange.8f253ea….png);
+  background-position: left 200px, right 400px;
+  background-repeat: no-repeat;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.bd-container .bd-container__inner {
+  display: flex;
+  flex-basis: content;
+}
+
+.sd-card .sd-card-img-top {
+  height: 52px;
+  width: 52px;
+  margin-left: auto;
+  margin-right: auto;
+}

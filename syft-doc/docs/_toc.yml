@@ -1,0 +1,48 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+parts:
+  - chapters:
+    - file: about
+    - file: overview
+    # - file: standalone
+    # - file: syft/helper
+    # - file: markdown-notebooks
+    # - file: _src/myfunctions
+    # - file: notebooks
+    # - file: markdown
+  - caption: Getting Started
+    chapters:
+    # - file: installations
+    - file: installations/overview
+    - file: installations/numpy-basics
+    - file: installations/pandas-basics
+  - caption: Deployments
+    chapters:
+    # - file: deployments
+    - file: deployments/overview
+    - file: deployments/numpy-basics
+    - file: deployments/pandas-basics
+  - caption: Tutorials
+    chapters:
+    # - file: tutorials
+    - file: tutorials/overview
+    - file: tutorials/numpy-basics
+    - file: tutorials/pandas-basics
+  - caption: Padawan
+    chapters:
+    # - file: padawan
+    - file: padawan/overview
+    - file: padawan/numpy-basics
+    - file: padawan/pandas-basics
+  - caption: Contribute
+    chapters:
+    # - file: syft
+    - file: syft/overview
+    - file: syft/part-0
+    - file: syft/part-1
+    # - file: syft/part-2
+    # - file: syft/part-3
+    # - file: syft/syft
